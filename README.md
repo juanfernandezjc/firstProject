@@ -1,3 +1,1 @@
-# firstProject
-My first project in Github
-First change
+A project about processing JSon files using Python
