@@ -1,0 +1,30 @@
+import json
+import requests
+
+x = requests.get(“https://jsonplaceholder.typicode.com/todos”)
+data = json.loads(x)
+
+new_list = []
+
+for item in data:
+	try:
+
+		title = item[‘title’]
+		if ‘qui’ in str(title).lower():
+			new_list.append(title)
+
+	except Exception as e:
+		print(f”There’s an error: {e}”)
+	except KeyError as e:
+		print(f”There’s no ‘title’ key associated with item {item}”)
+
+for index, title in enumerate(new_list, start=1):
+	try:
+
+if isinstance(title, int):
+			print(f”The title {title} is of type int”)
+		else:
+			print(f”Title {str(title)} is at index {index}”)
+
+	except Exception as e:
+		print(f”There’s an error: {e} while printing title {title}”)
